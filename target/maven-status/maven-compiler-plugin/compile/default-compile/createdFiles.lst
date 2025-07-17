@@ -1,2 +1,6 @@
+com\juaracoding\ecom\utils\DriverUtil.class
+com\juaracoding\ecom\pages\LoginPage.class
+com\juaracoding\ecom\pages\CartPage.class
 com\juaracoding\ecom\utils\ExcelUtils.class
 com\juaracoding\ecom\App.class
+com\juaracoding\ecom\pages\CheckoutPage.class

@@ -2,7 +2,6 @@ package com.juaracoding.ecom.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class LoginPage {
     private WebDriver driver;
@@ -13,16 +12,16 @@ public class LoginPage {
     private By errorMessage = By.cssSelector("h3[data-test='error']");
     private By errorMessageXpath = By.xpath("//*[@id=\"login_button_container\"]/div/form/h3");
 
-    public void loginPage() {
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void openLoginpage() {
+    public void openLoginPage() {
         driver.get("https://www.saucedemo.com/v1/index.html");
         driver.manage().window().maximize();
     }
 
-    public void inputsUsername(String username) {
+    public void inputUsername(String username) {
         driver.findElement(usernameField).sendKeys(username);
     }
 
@@ -47,7 +46,7 @@ public class LoginPage {
     }
 
     public void login(String username, String password) {
-        inputPassword(username);
+        inputUsername(username);
         inputPassword(password);
         clickButton();
     }

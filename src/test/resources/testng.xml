@@ -2,11 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Swaglabs eCommerce Suite">
   <test name="Automation Test">
+  <parameter name="baseURL" value="https://www.saucedemo.com/v1/index.html"/>
   <parameter name="username" value="standard_user"></parameter>
   <parameter name="password" value="secret_sauce"></parameter>
 
     <classes>
-        <class name="com.juaracoding.ecom.AuthenticationTest"></class>
+        <!-- <class name="com.juaracoding.ecom.AuthenticationTest"></class> -->
+        <class name="com.juaracoding.ecom.InventoryTest"></class>
     </classes>
 
   </test>

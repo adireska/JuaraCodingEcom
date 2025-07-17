@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="6" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-17T14:14:45 WIB" name="Swaglabs eCommerce Suite" finished-at="2025-07-17T14:14:59 WIB" duration-ms="14208">
+  <suite started-at="2025-07-17T23:35:40 WIB" name="Swaglabs eCommerce Suite" finished-at="2025-07-17T23:36:12 WIB" duration-ms="32491">
     <groups>
     </groups>
-    <test started-at="2025-07-17T14:14:45 WIB" name="Automation Test" finished-at="2025-07-17T14:14:59 WIB" duration-ms="14208">
-      <class name="com.juaracoding.ecom.AuthenticationTest">
-        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.juaracoding.ecom.AuthenticationTest@5c30a9b0]" started-at="2025-07-17T14:14:45 WIB" name="loginTest" data-provider="loginDataProvider" finished-at="2025-07-17T14:14:52 WIB" duration-ms="7220" status="PASS">
+    <test started-at="2025-07-17T23:35:40 WIB" name="Automation Test" finished-at="2025-07-17T23:36:12 WIB" duration-ms="32491">
+      <class name="com.juaracoding.ecom.InventoryTest">
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:35:40 WIB" name="setup" finished-at="2025-07-17T23:35:48 WIB" duration-ms="7845" status="PASS">
           <params>
             <param index="0">
+              <value>
+                <![CDATA[https://www.saucedemo.com/v1/index.html]]>
+              </value>
+            </param>
+            <param index="1">
               <value>
                 <![CDATA[standard_user]]>
               </value>
             </param>
-            <param index="1">
+            <param index="2">
               <value>
                 <![CDATA[secret_sauce]]>
               </value>
@@ -22,15 +27,28 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String)[pri:0, instance:com.juaracoding.ecom.AuthenticationTest@5c30a9b0]" started-at="2025-07-17T14:14:52 WIB" name="loginTest" data-provider="loginDataProvider" finished-at="2025-07-17T14:14:59 WIB" duration-ms="6450" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="productSortFeatureTest()[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:35:48 WIB" name="productSortFeatureTest" finished-at="2025-07-17T23:35:50 WIB" duration-ms="2183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- productSortFeatureTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:35:50 WIB" name="teardown" finished-at="2025-07-17T23:35:53 WIB" duration-ms="3252" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:35:53 WIB" name="setup" finished-at="2025-07-17T23:35:57 WIB" duration-ms="3646" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[problem_user]]>
+                <![CDATA[https://www.saucedemo.com/v1/index.html]]>
               </value>
             </param>
             <param index="1">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="2">
               <value>
                 <![CDATA[secret_sauce]]>
               </value>
@@ -38,8 +56,45 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-      </class> <!-- com.juaracoding.ecom.AuthenticationTest -->
+        </test-method> <!-- setup -->
+        <test-method signature="testAdd3Items()[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:35:57 WIB" name="testAdd3Items" finished-at="2025-07-17T23:35:57 WIB" duration-ms="382" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAdd3Items -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:35:57 WIB" name="teardown" finished-at="2025-07-17T23:36:00 WIB" duration-ms="3182" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:36:00 WIB" name="setup" finished-at="2025-07-17T23:36:09 WIB" duration-ms="8424" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://www.saucedemo.com/v1/index.html]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[standard_user]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[secret_sauce]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testAddItems()[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:36:09 WIB" name="testAddItems" finished-at="2025-07-17T23:36:09 WIB" duration-ms="267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddItems -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.juaracoding.ecom.InventoryTest@4facf68f]" started-at="2025-07-17T23:36:09 WIB" name="teardown" finished-at="2025-07-17T23:36:12 WIB" duration-ms="3257" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.juaracoding.ecom.InventoryTest -->
     </test> <!-- Automation Test -->
   </suite> <!-- Swaglabs eCommerce Suite -->
 </testng-results>

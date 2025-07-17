@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,12 +103,17 @@
                     <div class="method-list-content passed suite-Swaglabs_eCommerce_Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Swaglabs_eCommerce_Suite" title="com.juaracoding.ecom.AuthenticationTest" class="method navigator-link" hash-for-method="loginTest(problem_user, secret_sauce)">loginTest(problem_user, secret_sauce)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Swaglabs_eCommerce_Suite" title="com.juaracoding.ecom.InventoryTest" class="method navigator-link" hash-for-method="productSortFeatureTest">productSortFeatureTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Swaglabs_eCommerce_Suite" title="com.juaracoding.ecom.AuthenticationTest" class="method navigator-link" hash-for-method="loginTest(standard_user, secret_sauce)">loginTest(standard_user, secret_sauce)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Swaglabs_eCommerce_Suite" title="com.juaracoding.ecom.InventoryTest" class="method navigator-link" hash-for-method="testAdd3Items">testAdd3Items</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Swaglabs_eCommerce_Suite" title="com.juaracoding.ecom.InventoryTest" class="method navigator-link" hash-for-method="testAddItems">testAddItems</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Swaglabs_eCommerce_Suite -->
@@ -126,23 +131,28 @@
           <div class="suite-Swaglabs_eCommerce_Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.juaracoding.ecom.AuthenticationTest</span>
+              <span class="class-name">com.juaracoding.ecom.InventoryTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="loginTest(problem_user, secret_sauce)">
-                  </a> <!-- loginTest(problem_user, secret_sauce) -->
-                  <span class="method-name">loginTest</span>
-                  <span class="parameters">(problem_user,secret_sauce)</span>
+                  <a name="productSortFeatureTest">
+                  </a> <!-- productSortFeatureTest -->
+                  <span class="method-name">productSortFeatureTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="loginTest(standard_user, secret_sauce)">
-                  </a> <!-- loginTest(standard_user, secret_sauce) -->
-                  <span class="method-name">loginTest</span>
-                  <span class="parameters">(standard_user,secret_sauce)</span>
+                  <a name="testAdd3Items">
+                  </a> <!-- testAdd3Items -->
+                  <span class="method-name">testAdd3Items</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAddItems">
+                  </a> <!-- testAddItems -->
+                  <span class="method-name">testAddItems</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -158,10 +168,11 @@
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Swaglabs eCommerce Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Automation Test&quot; verbose=&quot;0&quot;&gt;
+    &lt;parameter name=&quot;baseURL&quot; value=&quot;https://www.saucedemo.com/v1/index.html&quot;/&gt;
     &lt;parameter name=&quot;password&quot; value=&quot;secret_sauce&quot;/&gt;
     &lt;parameter name=&quot;username&quot; value=&quot;standard_user&quot;/&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.juaracoding.ecom.AuthenticationTest&quot;/&gt;
+      &lt;class name=&quot;com.juaracoding.ecom.InventoryTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Automation Test --&gt;
 &lt;/suite&gt; &lt;!-- Swaglabs eCommerce Suite --&gt;
@@ -201,20 +212,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginTest')
-data.setCell(0, 2, 'com.juaracoding.ecom.AuthenticationTest')
-data.setCell(0, 3, 7220);
+data.setCell(0, 1, 'productSortFeatureTest')
+data.setCell(0, 2, 'com.juaracoding.ecom.InventoryTest')
+data.setCell(0, 3, 2183);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginTest')
-data.setCell(1, 2, 'com.juaracoding.ecom.AuthenticationTest')
-data.setCell(1, 3, 6450);
+data.setCell(1, 1, 'testAdd3Items')
+data.setCell(1, 2, 'com.juaracoding.ecom.InventoryTest')
+data.setCell(1, 3, 382);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testAddItems')
+data.setCell(2, 2, 'com.juaracoding.ecom.InventoryTest')
+data.setCell(2, 3, 267);
 window.suiteTableData['Swaglabs_eCommerce_Suite']= { tableData: data, tableDiv: 'times-div-Swaglabs_eCommerce_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 2 seconds</span>
               <div id="times-div-Swaglabs_eCommerce_Suite">
               </div> <!-- times-div-Swaglabs_eCommerce_Suite -->
             </div> <!-- times-div -->
@@ -229,22 +244,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Swaglabs_eCommerce_Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">4 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.juaracoding.ecom.AuthenticationTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">loginWithoutPassword</span>
-                <br/>
-                <span class="ignored-method-name">loginWithInvalidUsername</span>
-                <br/>
-                <span class="ignored-method-name">loginWithInvalidPassword</span>
-                <br/>
-                <span class="ignored-method-name">loginWithoutdUsername</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Swaglabs_eCommerce_Suite" class="panel">
@@ -253,15 +255,43 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.juaracoding.ecom.AuthenticationTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">loginTest(standard_user, secret_sauce)</span>
+              <div class="chronological-class-name">com.juaracoding.ecom.InventoryTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(https://www.saucedemo.com/v1/index.html, standard_user, secret_sauce)</span>
                 <span class="method-start">0 ms</span>
-              </div> <!-- test-method -->
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">loginTest(problem_user, secret_sauce)</span>
-                <span class="method-start">7222 ms</span>
+                <span class="method-name">productSortFeatureTest</span>
+                <span class="method-start">7846 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">10033 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(https://www.saucedemo.com/v1/index.html, standard_user, secret_sauce)</span>
+                <span class="method-start">13285 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testAdd3Items</span>
+                <span class="method-start">16931 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">17314 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup(https://www.saucedemo.com/v1/index.html, standard_user, secret_sauce)</span>
+                <span class="method-start">20496 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testAddItems</span>
+                <span class="method-start">28920 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">teardown</span>
+                <span class="method-start">29187 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
