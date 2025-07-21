@@ -2,22 +2,26 @@ package com.juaracoding.ecom;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import java.time.Duration;
 
 import com.juaracoding.ecom.pages.LoginPage;
 import com.juaracoding.ecom.providers.DataTestProvider;
 
 public class AuthenticationTest {
 
-  private WebDriver driver;
+    private WebDriver driver;
     private LoginPage loginPage;
+    private WebDriverWait wait;
 
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         loginPage = new LoginPage(driver);
         loginPage.openLoginPage();
     }
@@ -38,66 +42,48 @@ public class AuthenticationTest {
         Assert.assertEquals(actualUrl, expectedUrl, "Login gagal: URL tidak sesuai");
     }
 
-
-  @Test(enabled = true)
-    public void loginWithInvalidUsername() throws InterruptedException {
-        WebDriver driver = new ChromeDriver();
-        LoginPage loginPage = new LoginPage(driver);
-
-        loginPage.openLoginPage();
-        Thread.sleep(500);
-
+    @Test(enabled = true)
+    public void loginWithInvalidUsername() {
         loginPage.login("standard_userss", "secret_sauce");
-        Thread.sleep(500);
-
+        
         String expected = "Epic sadface: Username and password do not match any user in this service";
-        Assert.assertEquals(loginPage.getErrorMessage(), expected);
-
-        driver.quit();
+        Assert.assertEquals(loginPage.getErrorMessage(), expected, 
+            "Error message tidak sesuai untuk username invalid");
     }
 
-  @Test()
-  public void loginWithInvalidPassword() throws InterruptedException {
-    WebDriver driver = new ChromeDriver();
-        LoginPage loginPage = new LoginPage(driver);
-
-        loginPage.openLoginPage();
-        Thread.sleep(500);
-
+    @Test
+    public void loginWithInvalidPassword() {
         loginPage.login("standard_user", "secret_sauce123");
-        Thread.sleep(500);
-
+        
         String expected = "Epic sadface: Username and password do not match any user in this service";
-        Assert.assertEquals(loginPage.getErrorMessage(), expected);
-  }
+        Assert.assertEquals(loginPage.getErrorMessage(), expected, 
+            "Error message tidak sesuai untuk password invalid");
+    }
 
-  @Test()
-  public void loginWithoutPassword() throws InterruptedException {
-    WebDriver driver = new ChromeDriver();
-        LoginPage loginPage = new LoginPage(driver);
-
-        loginPage.openLoginPage();
-        Thread.sleep(500);
-
+    @Test
+    public void loginWithoutPassword() {
         loginPage.login("standard_user", "");
-        Thread.sleep(500);
-
+        
         String expected = "Epic sadface: Password is required";
-        Assert.assertEquals(loginPage.getErrorMessageByXpath(), expected);
-  }
+        Assert.assertEquals(loginPage.getErrorMessageByXpath(), expected, 
+            "Error message tidak sesuai untuk password kosong");
+    }
 
-  @Test()
-  public void loginWithoutUsername() throws InterruptedException {
-     WebDriver driver = new ChromeDriver();
-        LoginPage loginPage = new LoginPage(driver);
-
-        loginPage.openLoginPage();
-        Thread.sleep(500);
-
+    @Test
+    public void loginWithoutUsername() {
         loginPage.login("", "secret_sauce");
-        Thread.sleep(500);
-
+        
         String expected = "Epic sadface: Username is required";
-        Assert.assertEquals(loginPage.getErrorMessageByXpath(), expected);
-  }
+        Assert.assertEquals(loginPage.getErrorMessageByXpath(), expected, 
+            "Error message tidak sesuai untuk username kosong");
+    }
+
+    @Test
+    public void loginWithEmptyCredentials() {
+        loginPage.login("", "");
+        
+        String expected = "Epic sadface: Username is required";
+        Assert.assertEquals(loginPage.getErrorMessageByXpath(), expected, 
+            "Error message tidak sesuai untuk kredensial kosong");
+    }
 }

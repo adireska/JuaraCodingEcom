@@ -18,6 +18,10 @@ public class DriverUtil {
         return driver;
     }
 
+    public WebDriver getDriverss() {
+    return driver;
+  }
+
     public static void quitDriver() {
         if (driver != null) {
             driver.quit();
@@ -25,3 +29,5 @@ public class DriverUtil {
         }
     }
 }
+
+
