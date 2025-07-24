@@ -1,12 +1,15 @@
 package com.juaracoding.ecom;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -20,11 +23,14 @@ public class InventoryTest extends BaseTest {
     @Test()
     public void testAddItems() {
         cartPage = new CartPage(DriverUtil.getDriver());
+        WebDriverWait wait = new WebDriverWait(DriverUtil.getDriver(), Duration.ofSeconds(10));
 
         int total = cartPage.getTotalProductDisplayed();
         Assert.assertEquals(total, 6, "Jumlah produk tidak sesuai!");
 
         cartPage.addItemToCart();
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("shopping_cart_badge")));
 
         String itemCount = cartPage.getCartItemCount();
         Assert.assertEquals(itemCount, "1", "Jumlah item di cart tidak sesuai!");
@@ -36,11 +42,14 @@ public class InventoryTest extends BaseTest {
     @Test()
     public void testAdd3Items() {
         cartPage = new CartPage(DriverUtil.getDriver());
+        WebDriverWait wait = new WebDriverWait(DriverUtil.getDriver(), Duration.ofSeconds(10));
 
         int total = cartPage.getTotalProductDisplayed();
         Assert.assertEquals(total, 6, "Jumlah produk tidak sesuai!");
 
         cartPage.addMultipleItemsToCart(3);
+
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("shopping_cart_badge")));
 
         String itemCount = cartPage.getCartItemCount();
         Assert.assertEquals(itemCount, "3", "Jumlah item di cart tidak sesuai!");

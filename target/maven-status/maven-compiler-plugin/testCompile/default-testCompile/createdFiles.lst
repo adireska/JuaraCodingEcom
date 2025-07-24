@@ -1,4 +1,6 @@
 com\juaracoding\ecom\BaseTest.class
 com\juaracoding\ecom\InventoryTest.class
 com\juaracoding\ecom\providers\DataTestProvider.class
+com\juaracoding\ecom\DragDropTest.class
+com\juaracoding\ecom\ListernerTest.class
 com\juaracoding\ecom\AuthenticationTest.class

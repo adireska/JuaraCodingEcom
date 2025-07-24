@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+
 public class CartPage {
 
     private WebDriver driver;
@@ -12,8 +13,9 @@ public class CartPage {
     // === Locators ===
     private By addCartItemXpath = By.xpath("//*[@id=\"inventory_container\"]/div/div[1]/div[3]/button");
     private By buttonCartXpath = By.xpath("//*[@id=\"shopping_cart_container\"]/a");
-    private By totalItemCartXpath = By.xpath("//span[contains(@class,'shopping_cart_badge')]");
-    private By removeItemButtonXpath = By.xpath("//*[@id=\"cart_contents_container\"]/div/div[1]/div[3]/div[2]/button");
+    private By totalItemCartXpath = By.className("shopping_cart_badge");
+    private By totalItemCartBackupXpath = By.xpath("//*[@id='shopping_cart_container']/a/span");
+    private By removeItemButtonXpath = By.xpath("//span[@class='fa-layers-counter shopping_cart_badge']");
     private By checkoutButtonXpath = By.xpath("//*[@id=\"cart_contents_container\"]/div/div[2]/a[2]");
     public static By allProductItems = By.cssSelector(".inventory_item");
     private By addToCartButtons = By.cssSelector(".btn_inventory");
@@ -35,8 +37,29 @@ public class CartPage {
         driver.findElement(buttonCartXpath).click();
     }
 
-    public String getCartItemCount() {
-        return driver.findElement(totalItemCartXpath).getText();
+      public String getCartItemCount() {
+        try {
+            // Try primary locator first
+            WebElement cartBadge = driver.findElement(totalItemCartXpath);
+            return cartBadge.getText();
+        } catch (Exception e) {
+            try {
+                // Try backup locator
+                WebElement cartBadge = driver.findElement(totalItemCartBackupXpath);
+                return cartBadge.getText();
+            } catch (Exception ex) {
+                return "0"; // Return 0 if no badge found (empty cart)
+            }
+        }
+    }
+
+    public int getCartItemCountAsInt() {
+        String countText = getCartItemCount();
+        try {
+            return Integer.parseInt(countText);
+        } catch (NumberFormatException e) {
+            return 0;
+        }
     }
 
     public void removeItemFromCart() {

@@ -1,31 +1,48 @@
-// package com.juaracoding.ecom;
+package com.juaracoding.ecom;
 
-// import java.sql.DriverManager;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
-// import org.openqa.selenium.WebDriver;
-// import org.openqa.selenium.WebElement;
-// import org.openqa.selenium.interactions.Actions;
-// import org.testng.annotations.Test;
+import com.juaracoding.ecom.pages.DragDropPage;
+import com.juaracoding.ecom.pages.ResizerPage;
+import com.juaracoding.ecom.utils.DriverManager;
 
-// import com.juaracoding.ecom.pages.JQueryDragDropPage;
-// import com.juaracoding.ecom.utils.DriverUtil;
+@Listeners(ListernerTest.class)
+public class DragDropTest {
 
-// public class DragDropTest {
+  @Test()
+  public void dragElementTest() throws InterruptedException {
+    DriverManager driverManager = new DriverManager();
+    WebDriver driver = driverManager.getDriver();
+    driver.get("https://jquery-drag-drop-demo.webflow.io/");
 
-//   @Test()
-//   public void dragElementTest() throws InterruptedException {
-//     DriverManager getDriverss = new getDriverss();
-//     WebDriver driver = getDriverss.getDriverss();
-//     driver.get("https://jquery-drag-drop-demo.webflow.io/");
+    DragDropPage dragDropPage = new DragDropPage(driver);
+    dragDropPage.dragAndDrop();
 
-//     Actions builder = new Actions(driver);
-//     WebElement draggable = driver.findElement(JQueryDragDropPage.draggable);
-//     WebElement droppable = driver.findElement(JQueryDragDropPage.droppable);
+    String actual = dragDropPage.getLabel();
+    String expected = "Dropped!";
 
-//     builder.dragAndDrop(draggable, droppable).perform();
+    Assert.assertEquals(actual, expected);
 
-//     Thread.sleep(1000);
+    driverManager.quitDriver();
+  }
 
-//     driver.quitDriver();
-//   }
-// }
+  @Test()
+  public void resizeElementTest() throws InterruptedException {
+    DriverManager driverManager = new DriverManager();
+    WebDriver driver = driverManager.getDriver();
+    driver.get("https://jqueryui.com/resources/demos/resizable/default.html");
+
+    ResizerPage resizerPage = new ResizerPage(driver);
+    resizerPage.resizing();
+
+    String expected = "250px";
+
+    Assert.assertNotNull(resizerPage.getHeight(), expected);
+    Assert.assertNotNull(resizerPage.getWidth(), expected);
+
+    driverManager.quitDriver();
+  }
+}
