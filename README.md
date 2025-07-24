@@ -140,6 +140,20 @@ Based on the results:
 - **Parallel Mode:** *All test cases executed in **12 seconds***  
   ![Parallel Execution](image-2.png)
 
+
+Based on simple research:
+
+| Execution Mode | Number of Tests | Total Time (seconds) |
+|----------------|------------------|----------------------|
+| Sequential     | 10+ tests         | 16 seconds           |
+| Parallel       | 10+ tests         | 12 seconds           |
+
+**Insight:**  
+Running multiple tests sequentially will queue the tests one after another, resulting in longer total execution time (16 seconds).  
+Running tests in parallel allows tests to run simultaneously in different threads or browsers, reducing overall time to 12 seconds in this experiment.  
+Parallel execution is more efficient for larger test suites but requires proper test isolation and more computing resources.  
+Teams should decide the level of parallelism based on test independence, infrastructure, and desired feedback speed.
+
 ## ✅ Best Use Recommendations
 
 | Project Size | Recommended Mode | Notes |
@@ -187,11 +201,3 @@ This automation framework is designed to scale flexibly for both **sequential** 
 - ⚡ **Use Parallel Mode** for faster feedback and high-volume execution.
 
 **Happy Testing! 🚀**
-
-
-
-this result sequence just have 16 second for execute all my test case
-![alt text](image.png)
-
-This result Pararel just have 12 second for execute all my test case
-![alt text](image-2.png)
